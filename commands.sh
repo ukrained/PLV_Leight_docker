@@ -18,10 +18,10 @@ docker network create --driver bridge interhost
 docker container run --network interhost -v $(pwd):/home/root/scripts/ -it --name host1 myalpine /home/root/scripts/server.sh
 docker container run --network interhost -v $(pwd):/home/root/scripts/ -it --name host2 myalpine /home/root/scripts/client.sh 172.18.0.2
 
-# step 4 - input some data into one script to be available in other container (and vv)
-# connection enabled, you may transmot the data
+# step 4 - input some data on any host container and see it on another
+# connection is enabled, you may transmit the data
 
-# cleanup environment
+# cleanup the environment
 docker container rm -f host1
 docker container rm -f host2
 docker network rm interhost
