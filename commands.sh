@@ -3,7 +3,7 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 
-# step 0 - create 2 NetCat scripts: one per container (wtf is netcat?)
+# step 0 - create 2 NetCat scripts: one per container
 echo -e "#!/bin/sh\n\n# connect TCP to port 5000 on host IP\n# provided as 1st parameter\nnc \$1 5000" > client.sh
 echo -e "#!/bin/sh\n\n# listen to the port 5000 for incoming connections\nnc -l -p 5000" > server.sh
 
